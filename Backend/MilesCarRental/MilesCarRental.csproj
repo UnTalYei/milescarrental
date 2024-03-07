@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Infrastructure\Data access\**" />
+    <Content Remove="Infrastructure\Data access\**" />
+    <EmbeddedResource Remove="Infrastructure\Data access\**" />
+    <None Remove="Infrastructure\Data access\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
@@ -19,11 +26,9 @@
 
   <ItemGroup>
     <Folder Include="Application\UseCases\" />
-    <Folder Include="Application\Services\" />
     <Folder Include="Domain\Exceptions\" />
     <Folder Include="Domain\Repositories\" />
     <Folder Include="Domain\Ratings\" />
-    <Folder Include="Infrastructure\Data access\" />
     <Folder Include="Infrastructure\Dependencies\" />
     <Folder Include="Infrastructure\Persistence\" />
   </ItemGroup>

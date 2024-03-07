@@ -1,4 +1,6 @@
-﻿namespace MilesCarRental.Infrastructure.DataAccess
+﻿using MilesCarRental.Models;
+
+namespace MilesCarRental.Infrastructure.DataAccess
 {
     public class LocationRepository : IRepository<Location>
     {
