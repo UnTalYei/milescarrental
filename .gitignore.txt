@@ -1,0 +1,30 @@
+#Archivos y carpetas temporales
+bin/
+obj/
+.vs/
+
+#Archivos de configuración local
+.env
+launchSettings.json
+appsettings.Development.json
+
+
+#Archivos de base de datos
+*.mdf
+*.ldf
+
+
+#Archivos de terceros
+node_modules/
+bower_components/
+packages/
+
+#Archivos de pruebas
+*.test.js
+*.spec.js
+
+#Archivos de caché
+.cache/
+
+#Archivos de logs
+logs/
