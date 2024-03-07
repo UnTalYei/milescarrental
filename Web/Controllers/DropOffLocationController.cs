@@ -12,7 +12,7 @@ namespace MilesCarRental.Controllers
     /// </remarks>
     [Route("api/[controller]")]
     [ApiController]
-    public class DropOffController : ControllerBase
+    public class DropOffLocationController : ControllerBase
     {
         // XML Docs are used by default but are overridden by these properties:
         //s.Summary = "Create a new Contributor.";
