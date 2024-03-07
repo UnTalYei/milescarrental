@@ -6,7 +6,7 @@ namespace MilesCarRental.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OriginalController : ControllerBase
+    public class DropOffController : ControllerBase
     {
         // GET: api/<PickUpLocationController>
         [HttpGet]

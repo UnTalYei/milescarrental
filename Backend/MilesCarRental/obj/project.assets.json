@@ -8320,6 +8320,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.EntityFrameworkCore.Design >= 8.0.2",
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2",
@@ -8333,11 +8334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\albar\\source\\repos\\MilesCarRental\\MilesCarRental\\MilesCarRental.csproj",
+      "projectUniqueName": "C:\\Users\\albar\\OneDrive\\Escritorio\\Yeison\\milescarrentalYlt\\Backend\\MilesCarRental\\MilesCarRental.csproj",
       "projectName": "MilesCarRental",
-      "projectPath": "C:\\Users\\albar\\source\\repos\\MilesCarRental\\MilesCarRental\\MilesCarRental.csproj",
+      "projectPath": "C:\\Users\\albar\\OneDrive\\Escritorio\\Yeison\\milescarrentalYlt\\Backend\\MilesCarRental\\MilesCarRental.csproj",
       "packagesPath": "C:\\Users\\albar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\albar\\source\\repos\\MilesCarRental\\MilesCarRental\\obj\\",
+      "outputPath": "C:\\Users\\albar\\OneDrive\\Escritorio\\Yeison\\milescarrentalYlt\\Backend\\MilesCarRental\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\albar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8371,6 +8372,12 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[8.0.2, )"

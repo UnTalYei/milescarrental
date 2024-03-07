@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MilesCarRental")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a0263f0a0afe303c56fb42b480b170638ff3b6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MilesCarRental")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MilesCarRental")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
