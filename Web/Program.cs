@@ -1,6 +1,5 @@
-using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using MilesCarRental.Models;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

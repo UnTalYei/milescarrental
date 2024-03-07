@@ -44,15 +44,15 @@ namespace MilesCarRental.Infrastructure.DataAccess
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.HasOne(d => d.Category)
-                    .WithMany(p => p.Cars)
-                    .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
+                //entity.HasOne(d => d.Category)
+                //    .WithMany(p => p.Cars)
+                //    .HasForeignKey(d => d.CategoryId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
 
-                entity.HasOne(d => d.Location)
-                    .WithMany(p => p.Cars)
-                    .HasForeignKey(d => d.LocationId)
-                    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
+                //entity.HasOne(d => d.Location)
+                //    .WithMany(p => p.Cars)
+                //    .HasForeignKey(d => d.LocationId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
             });
 
             //modelBuilder.Entity<Category>(entity =>
