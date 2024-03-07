@@ -4,10 +4,19 @@
 
 namespace MilesCarRental.Controllers
 {
+    /// <summary>
+    /// Create a new Contributor
+    /// </summary>
+    /// <remarks>
+    /// Creates a new Contributor given a name.
+    /// </remarks>
     [Route("api/[controller]")]
     [ApiController]
     public class DropOffController : ControllerBase
     {
+        // XML Docs are used by default but are overridden by these properties:
+        //s.Summary = "Create a new Contributor.";
+        //s.Description = "Create a new Contributor. A valid name is required.";
         // GET: api/<PickUpLocationController>
         [HttpGet]
         public IEnumerable<string> Get()
