@@ -1,4 +1,5 @@
-﻿using MilesCarRental.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MilesCarRental.Models;
 
 namespace MilesCarRental.Infrastructure.DataAccess
 {
@@ -13,17 +14,17 @@ namespace MilesCarRental.Infrastructure.DataAccess
 
         public async Task<Location> GetByIdAsync(int id)
         {
-            return await _context.Locations.FindAsync(id);
+            return await _context.Location.FindAsync(id);
         }
 
         public async Task<IEnumerable<Location>> GetAllAsync()
         {
-            return await _context.Locations.ToListAsync();
+            return await _context.Location.ToListAsync();
         }
 
         public async Task AddAsync(Location location)
         {
-            await _context.Locations.AddAsync(location);
+            await _context.Location.AddAsync(location);
         }
 
         public async Task UpdateAsync(Location location)

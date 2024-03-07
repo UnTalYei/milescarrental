@@ -13,6 +13,10 @@ namespace MilesCarRental.Infrastructure.DataAccess
         {
             _configuration = configuration;
         }
+        public DbSet<Car> Cars { get; set; }
+        //public DbSet<Categor> Categories { get; set; } // Asumes a Categories table exists
+        public DbSet<Location> Locations { get; set; } // Asumes a Locations table exists
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -28,29 +32,28 @@ namespace MilesCarRental.Infrastructure.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Car>(entity =>
-            //{
-            //    entity.ToTable("Cars");
+            modelBuilder.Entity<Car>(entity =>
+            {
+                entity.HasKey(e => e.Id);
 
-            //    entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.Brand)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-            //    entity.Property(e => e.CategoryId).HasColumnName("CategoryId");
+                entity.Property(e => e.Model)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-            //    entity.Property(e => e.Description).HasMaxLength(255);
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Cars)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
 
-            //    entity.Property(e => e.LicensePlate).HasMaxLength(20);
-
-            //    entity.Property(e => e.Make).HasMaxLength(50);
-
-            //    entity.Property(e => e.Model).HasMaxLength(50);
-
-            //    entity.Property(e => e.PricePerDay).HasColumnType("decimal(18,2)");
-
-            //    entity.HasOne(d => d.Category)
-            //        .WithMany(p => p.Cars)
-            //        .HasForeignKey(d => d.CategoryId)
-            //        .OnDelete(DeleteBehavior.ClientSetNull);
-            //});
+                entity.HasOne(d => d.Location)
+                    .WithMany(p => p.Cars)
+                    .HasForeignKey(d => d.LocationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull); // Optional behavior based on your needs
+            });
 
             //modelBuilder.Entity<Category>(entity =>
             //{
