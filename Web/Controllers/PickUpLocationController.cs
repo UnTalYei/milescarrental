@@ -17,20 +17,11 @@ public class PickUpLocationController : ControllerBase
         _locationRepository = locationRepository;
     }
 
-
     // GET: api/<PickUpLocationController>
     [HttpGet]
-    [Route("pickuplocations")]
-    public async Task<IActionResult> GetPickupLocations()
+    public IEnumerable<string> Get()
     {
-        IEnumerable<Location> pickupLocations = await _locationRepository.GetAllAsync();
-
-        if (pickupLocations == null || !pickupLocations.Any())
-        {
-            return NotFound();
-        }
-
-        return Ok(pickupLocations);
+        return new string[] { "value1", "value2" };
     }
 
     // GET api/<PickUpLocationController>/5

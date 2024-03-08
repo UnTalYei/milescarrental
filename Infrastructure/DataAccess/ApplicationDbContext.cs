@@ -1,5 +1,9 @@
-﻿using Domain.Models;
+﻿using System.Reflection;
+using Domain.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MilesCarRental.Application.Common.Interfaces;
+using MilesCarRental.Infrastructure.Identity;
 
 //protected override void OnModelCreating(ModelBuilder modelBuilder)
 //{
@@ -23,7 +27,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MilesCarRental.Infrastructure.Models;
 
-public class ApplicationDbContext : DbContext
+//public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
+
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -40,8 +46,11 @@ public class ApplicationDbContext : DbContext
         //modelBuilder.Entity<Category>()
         //    .ToTable("Categories");
 
-        //modelBuilder.Entity<Location>()
-        //    .ToTable("Locations");
+        modelBuilder.Entity<Location>()
+            .ToTable("Locations");
+
+        //base.OnModelCreating(modelBuilder);
+        //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         // ... Agregar otras configuraciones de entidades
     }
