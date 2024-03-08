@@ -1,10 +1,10 @@
-﻿//namespace MilesCarRental.Application.Common.Interfaces;
+﻿namespace MilesCarRental.Application.Common.Interfaces;
 
-//public interface IApplicationDbContext
-//{
-//    //DbSet<TodoList> TodoLists { get; }
+public interface IApplicationDbContext
+{
+    //DbSet<TodoList> TodoLists { get; }
 
-//    //DbSet<TodoItem> TodoItems { get; }
+    //DbSet<TodoItem> TodoItems { get; }
 
-//    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-//}
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+}
