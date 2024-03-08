@@ -1,6 +1,7 @@
-using Infrastructure.DataAccess;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using MilesCarRental.Infrastructure.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 //builder.Services.AddDbContext<TodoContext>(opt =>
 //   opt.UseInMemoryDatabase("TodoList"));
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-  options.UseSqlServer(builder.Configuration.GetConnectionString("MilesCarRental")));
+         options.UseSqlServer(builder.Configuration.GetConnectionString("MilesCarRentalDb")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

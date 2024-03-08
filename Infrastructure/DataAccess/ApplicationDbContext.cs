@@ -1,30 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using MilesCarRental.Infrastructure.Identity;
-using MilesCarRental.Application.Common.Interfaces;
+﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.DataAccess;
-//internal class ApplicationDbContext
+//protected override void OnModelCreating(ModelBuilder modelBuilder)
 //{
+//    modelBuilder.Entity<Car>()
+//        .ToTable("Cars");
+
+//    modelBuilder.Entity<Category>()
+//        .ToTable("Categories");
+
+//    modelBuilder.Entity<Location>()
+//        .ToTable("Locations");
+
+//    // ... Agregar otras configuraciones de entidades
 //}
 
-public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
+//    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+//    {
+//        return await base.SaveChangesAsync(cancellationToken);
+//    }
+//}
+
+namespace MilesCarRental.Infrastructure.Models;
+
+public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
-    //public DbSet<TodoList> TodoLists => Set<TodoList>();
-    //public DbSet<TodoItem> TodoItems => Set<TodoItem>();
-
-    protected override void OnModelCreating(ModelBuilder builder)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
-        base.OnModelCreating(builder);
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
+
+    public DbSet<Location> Locations { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Car>()
+            .ToTable("Cars");
+
+        //modelBuilder.Entity<Category>()
+        //    .ToTable("Categories");
+
+        //modelBuilder.Entity<Location>()
+        //    .ToTable("Locations");
+
+        // ... Agregar otras configuraciones de entidades
     }
 }

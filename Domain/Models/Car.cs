@@ -1,4 +1,4 @@
-﻿namespace MilesCarRental.Models
+﻿namespace Domain.Models
 {
     public class Car
     {

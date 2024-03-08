@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MilesCarRental.Infrastructure.DataAccess;
+﻿using Domain.Models;
+using Infrastructure.DataAccess;
+using Microsoft.AspNetCore.Mvc;
+using MilesCarRental.Infrastructure.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,14 +10,27 @@ namespace Web.Controllers;
 [ApiController]
 public class PickUpLocationController : ControllerBase
 {
-    private readonly MilesCarRentalContext _context;
+    private readonly ILocationRepository _locationRepository;
+
+    public PickUpLocationController(ILocationRepository locationRepository)
+    {
+        _locationRepository = locationRepository;
+    }
 
 
     // GET: api/<PickUpLocationController>
     [HttpGet]
-    public IEnumerable<string> Get()
+    [Route("pickuplocations")]
+    public async Task<IActionResult> GetPickupLocations()
     {
-        return new string[] { "value1", "value2" };
+        IEnumerable<Location> pickupLocations = await _locationRepository.GetAllAsync();
+
+        if (pickupLocations == null || !pickupLocations.Any())
+        {
+            return NotFound();
+        }
+
+        return Ok(pickupLocations);
     }
 
     // GET api/<PickUpLocationController>/5
