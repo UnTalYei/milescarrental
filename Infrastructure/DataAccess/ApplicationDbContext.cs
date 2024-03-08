@@ -5,30 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using MilesCarRental.Application.Common.Interfaces;
 using MilesCarRental.Infrastructure.Identity;
 
-//protected override void OnModelCreating(ModelBuilder modelBuilder)
-//{
-//    modelBuilder.Entity<Car>()
-//        .ToTable("Cars");
-
-//    modelBuilder.Entity<Category>()
-//        .ToTable("Categories");
-
-//    modelBuilder.Entity<Location>()
-//        .ToTable("Locations");
-
-//    // ... Agregar otras configuraciones de entidades
-//}
-
-//    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-//    {
-//        return await base.SaveChangesAsync(cancellationToken);
-//    }
-//}
-
 namespace MilesCarRental.Infrastructure.Models;
 
-//public class ApplicationDbContext : DbContext
-public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
+public class ApplicationDbContext : DbContext
+//public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

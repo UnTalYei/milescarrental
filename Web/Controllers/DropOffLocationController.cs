@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.DataAccess;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,6 +24,8 @@ namespace MilesCarRental.Controllers
         {
             return new string[] { "value1", "value2" };
         }
+
+
 
         // GET api/<PickUpLocationController>/5
         [HttpGet("{id}")]

@@ -2,19 +2,16 @@
 {
     public class Location
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Address { get; set; }
-        public string? City { get; set; }
-        public string? State { get; set; }
-        public string? ZipCode { get; set; }
-
-        // Propiedades adicionales (opcionales)
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public string? ContactName { get; set; }
-        public string? ContactPhone { get; set; }
-        public string? ContactEmail { get; set; }
+        public int Id { get; set; } // Primary Key (auto-incrementing)
+        public required string Name { get; set; } // Not null
+        public string? Address { get; set; } // Optional
+        public double? Latitude { get; set; } // Optional
+        public double? Longitude { get; set; } // Optional
+        public string? PhoneNumber { get; set; } // Optional
+        public string? Email { get; set; } // Optional
+        public string? BusinessHours { get; set; } // Optional
+        public int? Capacity { get; set; } // Optional (nullable int)
+        public string? Restrictions { get; set; } // Optional
 
         // Relaciones (opcionales)
         //public virtual ICollection<Car> Cars { get; set; }

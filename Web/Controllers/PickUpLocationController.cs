@@ -10,19 +10,27 @@ namespace Web.Controllers;
 [ApiController]
 public class PickUpLocationController : ControllerBase
 {
-    private readonly ILocationRepository _locationRepository;
+    private readonly ApplicationDbContext _context;
 
-    public PickUpLocationController(ILocationRepository locationRepository)
+    public PickUpLocationController(ApplicationDbContext locationRepository)
     {
-        _locationRepository = locationRepository;
+        _context = locationRepository;
     }
 
     // GET: api/<PickUpLocationController>
     [HttpGet]
-    public IEnumerable<string> Get()
+    public IEnumerable<Location> Get()
     {
-        return new string[] { "value1", "value2" };
+        return _context.Locations.ToList();
     }
+
+
+    //// GET: api/<PickUpLocationController>
+    //[HttpGet]
+    //public IEnumerable<string> Get()
+    //{
+    //    return new string[] { "value1", "value2" };
+    //}
 
     // GET api/<PickUpLocationController>/5
     [HttpGet("{id}")]
